@@ -8,7 +8,8 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class LoginTests extends BaseTest {
+public class homework16 extends BaseTest {
+
     @Test
     public void loginEmptyEmailPassword() {
 
@@ -19,21 +20,15 @@ public class LoginTests extends BaseTest {
         WebDriver driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-        String url = "https://ga.koel.app/";
+        String url = "https://qa.koel.app/";
         driver.get(url);
 
-        WebElement emailField = driver.findElement(By.cssSelector("input[type='email']"));
-       emailField.clear();
-       emailField.sendKeys("jason.fenstermaker1234@testpro.io");
+        WebElement registrationLink = driver.findElement(By.cssSelector(" [href='registration' ]"));
+        registrationLink.click();
 
-         WebElement passwordField = driver.findElement(By.cssSelector("input[type='password']"));
-       passwordField.clear();
-       passwordField.sendKeys("Testpro.io2");
+        String registrationUrl = "https://qa.koel.app/registration";
+        Assert.assertEquals(driver.getCurrentUrl(), registrationUrl);
 
-       WebElement loginBtn = driver.findElement(By.cssSelector("button[type='submit']"));
-       loginBtn.click();
-
-        Assert.assertEquals(driver.getCurrentUrl(), url);
         driver.quit();
     }
 }
