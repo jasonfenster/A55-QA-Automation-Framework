@@ -19,7 +19,7 @@ public class LoginTests extends BaseTest {
         WebDriver driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-        String url = "https://ga.koel.app/";
+        String url = "https://qa.koel.app/";
         driver.get(url);
 
         WebElement emailField = driver.findElement(By.cssSelector("input[type='email']"));
