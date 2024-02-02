@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="HomeWork18">
+    <test name="HomeWork18" preserve-order="false">
+        <parameter name="BaseURL" value="https://qa.koel.app/" />
+        <classes>
+            <class name="HomeWork18">
+                <methods>
+                    <include name="playSong"/>
+                </methods>
+            </class>
+            <class name="HomeWork17"/>
+            <class name="HomeWork18"/>
+            <class name="BaseTest"/>
+        </classes>
+    </test>
+</suite>
+
+
