@@ -4,7 +4,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class HomeWork19 extends BaseTest {
+public class HomeWork20 extends BaseTest {
 
     @Test
     public void deletePlaylist() throws InterruptedException {
@@ -19,6 +19,8 @@ public class HomeWork19 extends BaseTest {
         clickClass19Playlist();
         //Select red "X Playlist" Button
         clickXPlaystlist();
+        // Wait for success message
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.success.show")));
         //Assertion Verify "Deleted playlist {playlist name}
         //Assertion
         Assert.assertEquals(getDeletedPlaylistMsg(),expectedPlaylistDeletedMsg);
