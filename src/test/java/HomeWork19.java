@@ -1,5 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -18,6 +19,8 @@ public class HomeWork19 extends BaseTest {
         clickClass19Playlist();
         //Select red "X Playlist" Button
         clickXPlaystlist();
+        // Wait for success message
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.success.show")));
         //Assertion Verify "Deleted playlist {playlist name}
         //Assertion
         Assert.assertEquals(getDeletedPlaylistMsg(),expectedPlaylistDeletedMsg);
