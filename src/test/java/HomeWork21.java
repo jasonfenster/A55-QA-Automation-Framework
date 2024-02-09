@@ -19,13 +19,13 @@ public class HomeWork21 extends BaseTest {
         provideEmail("jason.fenstermaker1234@testpro.io");
         providePassword("Testpro.io2");
         loginToKoel();
-        Thread.sleep(2000);
+
         //Double click
         doubleClickPlaylist();
-        Thread.sleep(2000);
+
         //Enter new name
         enterNewName();
-        Thread.sleep(2000);
+
         //assertion
         Assert.assertEquals(getRenamePlayListSuccessMsg(), updatedPlaylistSuccessMsg);
 
