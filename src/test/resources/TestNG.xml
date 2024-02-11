@@ -15,6 +15,9 @@
             <class name="HomeWork20"/>
             <class name="HomeWork21"/>
             <class name="BaseTest"/>
+            <class name="pages.BasePage"/>
+            <class name="pages.HomePage"/>
+            <class name="pages.LoginPage"/>
 
         </classes>
     </test>
