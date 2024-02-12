@@ -2,6 +2,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.AllSongsPage;
+import pages.HomePage;
+import pages.LoginPage;
 
 public class HomeWork18 extends BaseTest {
     @Test
@@ -11,12 +14,30 @@ public class HomeWork18 extends BaseTest {
         provideEmail("jason.fenstermaker1234@testpro.io");
         providePassword("Testpro.io2");
         loginToKoel();
-        Thread.sleep(5000);
+
         //click on Play
         clickPlay();
-        Thread.sleep(5000);
+
         //Assertion
         Assert.assertTrue(isSongPlaying());
+
+    }
+
+    @Test
+    public void playSongHomeWork23() throws InterruptedException {
+        //Login
+        LoginPage loginPage = new LoginPage(driver);
+        HomePage homePage = new HomePage(driver);
+        AllSongsPage allSongsPage = new AllSongsPage(driver);
+
+        loginPage.login();
+
+        homePage.chooseAllSongsList();
+        allSongsPage.contextClickFirstSong();
+        allSongsPage.choosePlay();
+
+        //Assertion
+        Assert.assertTrue(allSongsPage.isSongPlaying());
 
     }
 

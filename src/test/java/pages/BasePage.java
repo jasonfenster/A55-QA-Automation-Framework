@@ -11,9 +11,9 @@ import java.time.Duration;
 
 public class BasePage {
 
-    WebDriver driver;
-    WebDriverWait wait;
-    Actions actions;
+    protected WebDriver driver;
+    protected WebDriverWait wait;
+    protected Actions actions;
 
     public BasePage(WebDriver givenDriver) {
         driver = givenDriver;
@@ -21,9 +21,18 @@ public class BasePage {
         actions = new Actions(driver);
     }
 
+    //Elements
+    By soundBarVisualizer = By.cssSelector("[data-testid= 'sound-bar-play']");
+
     public WebElement findElement(By locator){
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
+
+    public boolean isSongPlaying() {
+        //WebElement soundBar = driver.findElement(By.xpath("//*[@id=\"mainFooter\"]/div[2]/div[2]/div/button[1]/div"));
+        return findElement(soundBarVisualizer).isDisplayed();
+    }
+
 
 
 }
