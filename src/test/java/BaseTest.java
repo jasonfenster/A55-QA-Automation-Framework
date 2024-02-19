@@ -1,3 +1,4 @@
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -23,6 +24,7 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
 import java.time.Duration;
+import java.util.HashMap;
 
 import static org.bouncycastle.cms.RecipientId.password;
 
@@ -88,12 +90,48 @@ public class BaseTest {
                 caps.setCapability("browserName", "firefox");
                 return driver = new RemoteWebDriver(URI.create(gridURL).toURL(),caps);
 
+            case "cloud":
+                return lambdaTest();
+
             default:
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--remote-allow-origins=*");
                 return driver = new ChromeDriver(chromeOptions);
         }
+    }
+
+    public WebDriver lambdaTest() throws MalformedURLException {
+        //String hubUrl = "https://hub.lambdatest.com/wd/hub";
+        //String hub= "@hub.lambdaTest.com/wd/hub";
+        String userName = "jason.fenstermaker";
+        String authKey = "0NZwkk1QmmSd7zNRFTjN1hTmEibBl7LLzqmYNT87IoxLbVt5W4";
+
+//        DesiredCapabilities capabilities = new DesiredCapabilities();
+//        capabilities.setCapability("platform", "Windows10");
+//        capabilities.setCapability("browserName", "Chrome");
+//        capabilities.setCapability("version", "121.0");
+//        capabilities.setCapability("resolution", "12024x768");
+//        capabilities.setCapability("build", "TestNG with Java");
+//        capabilities.setCapability("name", BaseTest.class.getName());
+//        capabilities.setCapability("plugin", "java-testNG");
+
+
+        ChromeOptions browserOptions = new ChromeOptions();
+        browserOptions.setPlatformName("Windows 10");
+        browserOptions.setBrowserVersion("122.0");
+        HashMap<String, Object> ltOptions = new HashMap<>();
+        ltOptions.put("username", userName);
+        ltOptions.put("accessKey", authKey);
+        ltOptions.put("project", "Untitled");
+        ltOptions.put("selenium_version", "4.0.0");
+        ltOptions.put("w3c", true);
+        browserOptions.setCapability("LT:Options", ltOptions);
+
+        String hubURL = "https://" + "jason.fenstermaker" + ":" + "0NZwkk1QmmSd7zNRFTjN1hTmEibBl7LLzqmYNT87IoxLbVt5W4" + "@hub.lambdatest.com/wd/hub";
+
+        return new RemoteWebDriver(new URL(hubURL), browserOptions);
+        //return new RemoteWebDriver(new URL(hubUrl), capabilities);
     }
 
     @AfterMethod
