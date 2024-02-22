@@ -102,8 +102,8 @@ public class BaseTest {
     }
 
     public WebDriver lambdaTest() throws MalformedURLException {
-        //String hubUrl = "https://hub.lambdatest.com/wd/hub";
-        //String hub= "@hub.lambdaTest.com/wd/hub";
+        String hubUrl = "https://hub.lambdatest.com/wd/hub";
+        String hub= "@hub.lambdaTest.com/wd/hub";
         String userName = "jason.fenstermaker";
         String authKey = "0NZwkk1QmmSd7zNRFTjN1hTmEibBl7LLzqmYNT87IoxLbVt5W4";
 
