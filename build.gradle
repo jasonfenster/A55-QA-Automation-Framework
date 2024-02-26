@@ -12,11 +12,17 @@ repositories {
 dependencies {
     testImplementation 'org.testng:testng:7.6.1'
     implementation 'org.seleniumhq.selenium:selenium-java:4.5.0'
-    testImplementation 'io.github.bonigarcia:webdrivermanager:5.4.1'
+    testImplementation 'io.github.bonigarcia:webdrivermanager:5.6.3'
 }
 
 test {
     useTestNG() {
         suites "src/test/resources/TestNG.xml"
+        systemProperty "browser", System.getProperty("browser")
+        //suites "src/test/resources/HomeWork18Config.xml"
+        //suites "src/test/resources/HomeWork19Config.xml"
+        //suites "src/test/resources/HomeWork20Config.xml"
+        //suites "src/test/resources/HomeWork21Config.xml"
+
     }
 }
