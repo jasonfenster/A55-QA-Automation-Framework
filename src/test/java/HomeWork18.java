@@ -7,21 +7,21 @@ import pages.HomePage;
 import pages.LoginPage;
 
 public class HomeWork18 extends BaseTest {
-    @Test
-    public void playSong() throws InterruptedException {
-        //Login
-        //navigateToPage();
-        provideEmail("jason.fenstermaker1234@testpro.io");
-        providePassword("Testpro.io2");
-        loginToKoel();
-
-        //click on Play
-        clickPlay();
-
-        //Assertion
-        Assert.assertTrue(isSongPlaying());
-
-    }
+//    @Test
+//    public void playSong() throws InterruptedException {
+//        //Login
+//        //navigateToPage();
+//        provideEmail("jason.fenstermaker1234@testpro.io");
+//        providePassword("Testpro.io2");
+//        loginToKoel();
+//
+//        //click on Play
+//        clickPlay();
+//
+//        //Assertion
+//        Assert.assertTrue(isSongPlaying());
+//
+//    }
 
     @Test
     public void playSongHomeWork23() throws InterruptedException {
