@@ -169,7 +169,7 @@ public class BaseTest {
     //@BeforeSuite
     //static void setupClass() {
     //WebDriverManager.chromedriver().setup();
-    //note for me: test ran parallel/successful after clearing cache 2/26/23
+
 
 
 
