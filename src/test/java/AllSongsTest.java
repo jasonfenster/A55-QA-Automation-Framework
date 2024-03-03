@@ -6,7 +6,7 @@ import pages.AllSongsPage;
 import pages.HomePage;
 import pages.LoginPage;
 
-public class HomeWork18 extends BaseTest {
+public class AllSongsTest extends BaseTest {
 //    @Test
 //    public void playSong() throws InterruptedException {
 //        //Login
@@ -54,3 +54,5 @@ public class HomeWork18 extends BaseTest {
     }
 
 }
+
+

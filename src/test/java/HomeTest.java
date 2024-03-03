@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class HomeWork21 extends BaseTest {
+public class HomeTest extends BaseTest {
     String newPlaylistName = "Sample Edited Playlist";
 
     @Test
@@ -54,3 +54,4 @@ public class HomeWork21 extends BaseTest {
     }*/
 
 }
+
