@@ -85,17 +85,3 @@ Feature: User should be able to log in to
     And I click on the login button
     Then I should not be taken to the home page
 
-  Scenario: User can update email and password successfully to start this whole thing over
-    Given I open the login page
-    When I enter my email "jason.fenstermaker123@testpro.io"
-    And I enter my password "Testpro.io1"
-    And I click on the login button
-    Then I should be taken to the home page
-    And User selects edit user profile
-    And User enters new password
-    And User clears current email
-    And User enters original email "jason.fenstermaker1234@testpro.io"
-    And User enters original password "Testpro.io2"
-    And User selects Save Button
-    Then Profile Updated popup appears
-

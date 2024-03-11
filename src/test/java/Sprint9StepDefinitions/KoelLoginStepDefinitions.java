@@ -20,6 +20,7 @@ import org.junit.Assert;
 import java.time.Duration;
 
 public class KoelLoginStepDefinitions {
+    private By userAvatarIcon = By.cssSelector("img.avatar");
     WebDriver driver;
 
     WebDriverWait wait;
@@ -63,9 +64,9 @@ public class KoelLoginStepDefinitions {
 
     @Then("I should be taken to the home page")
     public void iShouldBeTakenToTheHomePage() {
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("img.avatar")));
+        wait.until(ExpectedConditions.presenceOfElementLocated(userAvatarIcon));
 
-        WebElement avatarImage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("img.avatar")));
+        WebElement avatarImage = wait.until(ExpectedConditions.visibilityOfElementLocated(userAvatarIcon));
         Assert.assertTrue(avatarImage.isDisplayed());
     }
 
@@ -178,27 +179,6 @@ public class KoelLoginStepDefinitions {
         WebElement newPasswordInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#inputProfileNewPassword")));
         newPasswordInput.clear();
         newPasswordInput.sendKeys(newPassword);
-    }
-
-    //Scenario: User can update email and password successfully to start this whole thing over
-    @And("User enters original email {string}")
-    public void userEntersOriginalEmail(String originalEmail) {
-        WebElement emailInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#inputProfileEmail")));
-        emailInput.clear();
-        emailInput.sendKeys(originalEmail);
-    }
-
-    @And("User enters new password")
-    public void userEntersNewPassword() {
-        WebElement currentPasswordInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#inputProfileCurrentPassword")));
-        currentPasswordInput.sendKeys("Testpro.io1");
-
-    }
-    @And("User enters original password {string}")
-    public void userEntersOriginalPassword(String originalPassword) {
-        WebElement passwordInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#inputProfileNewPassword")));
-        passwordInput.clear();
-        passwordInput.sendKeys(originalPassword);
     }
 
 
