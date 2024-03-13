@@ -24,8 +24,9 @@ dependencies {
 
 test {
     useTestNG() {
-        suites "src/test/resources/CucumberSprint9.xml"
 
+        suites "src/test/resources/CucumberSprint10.xml"
+        //suites "src/test/resources/CucumberSprint9.xml"
         //suites "src/test/resources/Cucumber.xml"
         //suites "src/test/resources/TestNG.xml"
         //suites "src/test/resources/${suite}.xml"

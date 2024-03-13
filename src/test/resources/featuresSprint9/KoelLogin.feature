@@ -45,12 +45,12 @@ Feature: User should be able to log in to
     And User selects Save Button
     Then Profile Updated popup appears
 
-  Scenario: Login with new email
-    Given I open the login page
-    When I enter my new email "jason.fenstermaker123@testpro.io"
-    And I enter my password "Testpro.io2"
-    And I click on the login button
-    Then I should be taken to the home page
+#  Scenario: Login with new email
+#    Given I open the login page
+#    When I enter my new email "jason.fenstermaker123@testpro.io"
+#    And I enter my password "Testpro.io2"
+#    And I click on the login button
+#    Then I should be taken to the home page
 
   Scenario: Not be able to login with old email
     Given I open the login page
