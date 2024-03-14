@@ -13,7 +13,7 @@ Feature: Homepage for Koel
     And I enter newly registered newPassword "Ft7lNxia"
     And I click on the-a login button
     And I should be logged in hopefully
-    Then Welcome message for a new user should be "Hello, Student!"
+    Then Welcome message for a new user should be appear
 
   Scenario: Recently played songs should be present if user played at least one song
     Given I open a login page

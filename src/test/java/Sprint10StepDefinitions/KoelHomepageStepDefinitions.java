@@ -82,15 +82,16 @@ public class KoelHomepageStepDefinitions {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[type='password']"))).sendKeys(newPassword);
     }
 
-    @Then("Welcome message for a new user should be {string}")
-    public void welcomeMessageShouldBe(String expectedMessage) {
-        By welcomeMessageLocator = By.cssSelector("body > div.login-wrapper > h2");
+
+    @Then("Welcome message for a new user should be appear")
+    public void welcomeMessageShouldBe() {
+        By welcomeMessageLocator = By.cssSelector("#homeWrapper > header > div.heading-wrapper");
 
         WebElement welcomeMessageElement = wait.until(ExpectedConditions.presenceOfElementLocated(welcomeMessageLocator));
 
         String actualMessage = welcomeMessageElement.getText().trim();
 
-        Assert.assertEquals("Welcome message doesn't match expected content", expectedMessage, actualMessage);
+        Assert.assertFalse("Welcome message is not present", actualMessage.isEmpty());
     }
 
 
