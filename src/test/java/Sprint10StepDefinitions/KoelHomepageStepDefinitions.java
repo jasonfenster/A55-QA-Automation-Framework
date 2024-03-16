@@ -16,6 +16,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
+
 import java.time.Duration;
 
 public class KoelHomepageStepDefinitions {
@@ -33,6 +34,8 @@ public class KoelHomepageStepDefinitions {
 
         driver = new ChromeDriver(options);
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        SeleniumHelper.initialize(driver);
     }
 
     @After
