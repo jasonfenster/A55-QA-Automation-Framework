@@ -38,6 +38,7 @@ public class KoelLoginStepDefinitions {
 
     @After
     public void closeBrowser() {
+
         driver.quit();
     }
 
@@ -122,8 +123,9 @@ public class KoelLoginStepDefinitions {
 
     @And("User clears current email")
     public void userClearsCurrentEmail() {
-        WebElement currentEmailInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#inputProfileEmail")));
-        currentEmailInput.clear();
+        WebElement emailInputField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#inputProfileEmail")));
+        emailInputField.clear();
+
     }
 
     @And("User enters new email")
