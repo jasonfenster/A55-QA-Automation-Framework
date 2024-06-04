@@ -196,3 +196,4 @@ Feature: I want to login to Koel Sprint Eight
     And I enter my Koel password ""
     And I hit the Koel submit button
     Then I am still on the login screen
+
